@@ -1,0 +1,13 @@
+
+
+
+// in the architecture we need to make sure that whenever some webhook hits , it needs to process to the db (as processing) and queue (kafka queue where event will be picked up ) in a TRANSACTIONAL manner to maintain ATOMICITY. 
+
+i.e either both of them happens or none. 
+
+
+// running postgres locallyin your system 
+
+1. docker run -p 5432:5432 -e  POSTGRES_PASSWORD=mysecretpass postgres
+2. npx prisma migrate dev 
+3. 

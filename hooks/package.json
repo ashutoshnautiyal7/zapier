@@ -1,0 +1,45 @@
+{
+  "name": "nodejs-oclif-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm exec tsc && node ./dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@oclif/core": "^4.0.18",
+    "@prisma/client": "^5.19.1",
+    "@scure/bip32": "^1.4.0",
+    "@types/express": "^4.17.21",
+    "@types/tiny-secp256k1": "^2.0.1",
+    "axios": "^1.7.5",
+    "bip32": "^4.0.0",
+    "bip39": "^3.1.0",
+    "bitcoinjs-lib": "^6.1.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "kafkajs": "^2.2.4",
+    "prisma": "^5.19.1",
+    "tiny-secp256k1": "^2.2.3",
+    "typescript": "^5.5.4"
+  },
+  "type": "commonjs",
+  "bin": {
+    "nodejs-oclif-cli": "./bin/run.js"
+  },
+  "oclif": {
+    "bin": "nodejs-oclif-cli",
+    "commands": "./dist/commands",
+    "dirname": "nodejs-oclif-cli",
+    "topicSeparator": " "
+  },
+  "devDependencies": {
+    "@types/bip39": "^3.0.0",
+    "@types/bitcoinjs-lib": "^5.0.0",
+    "@types/node": "^18.19.45",
+    "ts-node": "^10.9.2"
+  }
+}
