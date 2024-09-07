@@ -11,3 +11,23 @@ i.e either both of them happens or none.
 1. docker run -p 5432:5432 -e  POSTGRES_PASSWORD=mysecretpass postgres
 2. npx prisma migrate dev 
 3. 
+
+//  starting kafka locally 
+
+1. docker run -p 9092:9092 apache/kafka:3.7.1
+
+2. get the container id from => docker ps 
+3. create a topic inside kafka => 
+
+            docker exec -it 7cfb61b5d15c /bin/bash
+
+            cd opt/kafka/bin
+
+            ./kafka-topics.sh --create --topic zap-events --bootstrap-server localhost:9092
+
+
+// processor  => the only work for processor is to pull  entries from db and push it onto queue 
+
+
+// worker => the work for the worker is to proces the items in the  kafka queue. 
+
